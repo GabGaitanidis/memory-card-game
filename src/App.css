@@ -5,7 +5,10 @@
   font-family: "Margarine", sans-serif;
 }
 body {
-  background-color: rgb(57, 10, 10);
+  background-image: url("bgb.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .container {
   display: grid;
@@ -97,6 +100,10 @@ button,
   .buttons {
     width: 80%;
     padding: 20px;
+  }
+  body {
+    background-image: none;
+    background-color: red;
   }
   .container {
     text-align: center;
