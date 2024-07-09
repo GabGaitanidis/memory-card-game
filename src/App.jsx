@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import "./App.css";
+import Main from "./start";
 
 const shuffleArray = (array) => {
   let shuffledArray = [...array];
@@ -104,32 +105,46 @@ function App() {
           </div>
         </div>
       ) : (
-        <div className="main">
-          <h1>Welcome To My Game!</h1>
-          <div className="buttons">
-            <h2>Choose Difficulty</h2>
-            <button className="btn1" onClick={() => setDif(12)}>
-              Easy(12 cards)
-            </button>
-            <button className="btn2" onClick={() => setDif(20)}>
-              Medium(20 cards)
-            </button>
-            <button className="btn3" onClick={() => setDif(30)}>
-              Hard(30 cards)
-            </button>
-            <button className="startBtn" onClick={() => setStart(true)}>
-              Start {dif} Cards
-            </button>
-          </div>
-          <div className="divicon">
-            <a href="https://github.com/GabGaitanidis/memory-card-game">
-              <img src="src\social.png" alt="" className="gitIcon" />
-            </a>
-          </div>
-        </div>
+        <Main
+          score={bestScore}
+          start={() => setStart(true)}
+          dif={dif}
+          setDif1={() => setDif(12)}
+          setDif2={() => setDif(20)}
+          setDif3={() => setDif(30)}
+        />
       )}
     </div>
   );
 }
 
 export default App;
+{
+  /* <div className="main">
+          <h1>Welcome To My Game!</h1>
+          <div className="buttons">
+            <div className="btn-h2 section1">
+              <h2>Choose Difficulty</h2>
+              <button className="startBtn" onClick={() => setStart(true)}>
+                Start {dif} Cards
+              </button>
+            </div>
+            <div className="section2">
+              <div className="dif-btns">
+                <button className="btn1" onClick={() => setDif(12)}>
+                  Easy(12 cards)
+                </button>
+                <button className="btn2" onClick={() => setDif(20)}>
+                  Medium(20 cards)
+                </button>
+                <button className="btn3" onClick={() => setDif(30)}>
+                  Hard(30 cards)
+                </button>
+              </div>
+              <div className="scoreStart">
+                <h2>Best Score: {bestScore}</h2>
+              </div>
+            </div>
+          </div>
+        </div> */
+}
